@@ -1,0 +1,48 @@
+.Button {
+  align-items: center;
+  -webkit-appearance: none;
+  background-color: #a11ec6;
+  border: 1px solid transparent;
+  border-color: #a11ec6;
+  border-radius: 0;
+  border-width: 0;
+  box-shadow: none;
+  box-sizing: inherit;
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: 'Space Mono', monospace;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  height: 2.25em;
+  justify-content: center;
+  line-height: 1.5;
+  min-width: 180px;
+  padding-bottom: 1.125em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 1.125em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+  user-select: none;
+  vertical-align: top;
+  white-space: nowrap;
+
+  &:not(:disabled) {
+    &:hover,
+    &:focus {
+      background-color: #92eaff;
+      border-color: #b5b5b5;
+      color: #39486f;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    filter: brightness(0.5);
+  }
+}
