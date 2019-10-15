@@ -6,6 +6,7 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import * as serviceWorker from './serviceWorker'
 import Layout from './hoc/Layout'
 import EnzymeInDepth from './containers/EnzymeInDepth'
+import ExampleForm from './containers/ExampleForm'
 
 ReactDOM.render(
   <Layout>
@@ -13,6 +14,7 @@ ReactDOM.render(
       <Switch>
         <Route path="/intro" component={App} />
         <Route path="/enzyme-in-depth" component={EnzymeInDepth} />
+        <Route path="/example-form" component={ExampleForm} />
         <Redirect to="/intro" />
       </Switch>
     </BrowserRouter>
