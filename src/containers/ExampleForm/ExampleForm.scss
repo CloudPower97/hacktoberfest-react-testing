@@ -1,0 +1,51 @@
+#example-form {
+  background-color: white;
+  border-radius: 7px;
+  box-shadow: -1px 5px 10px rgb(0, 0, 0);
+  padding: 15px;
+  width: 30vw;
+
+  .input-wrapper {
+    display: grid;
+    grid-column-gap: 45px;
+    grid-row-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+
+  input[type='text'],
+  input[type='date'],
+  input[type='datetime'],
+  input[type='number'],
+  input[type='search'],
+  input[type='time'],
+  input[type='url'],
+  input[type='email'],
+  textarea,
+  select {
+    border: 1px solid #bebebe;
+    box-sizing: border-box;
+    margin: 0px;
+    max-height: 30px;
+    outline: none;
+    padding: 7px;
+    transition: all 0.3s ease-in-out;
+
+    &:focus {
+      border: 1px solid #a11ec6;
+      box-shadow: 0 0 8px #0000004f;
+    }
+  }
+
+  .field-error {
+    color: black;
+    font-size: small;
+  }
+
+  button {
+    min-width: 0px;
+    min-height: 0px;
+    padding: 10px;
+    justify-self: stretch;
+  }
+}

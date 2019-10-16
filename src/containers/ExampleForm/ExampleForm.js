@@ -1,7 +1,7 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
-import Button from '../../components/Button'
+import "./ExampleForm.scss"
 
 import { Link } from 'react-router-dom'
 
@@ -10,44 +10,12 @@ import StepWizard from 'react-step-wizard'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
-import { Formik, Form, Field } from 'formik'
+import { Formik } from 'formik'
 import * as Yup from 'yup'
 
+import { FirstStep, SecondStep, ThirdStep } from './components'
 
-const FirstStep = ({ values, touched, errors, handleBlur, handleChange, nextStep }) => {
-  const fields = ['name']
-
-  return (
-    <Form>
-      <Field
-        label="Nome"
-        id="name"
-        type="text"
-        value={values.name}
-        variant="outlined"
-        onChange={handleChange}
-        onBlur={handleBlur}
-        error={errors.name && touched.name}
-        helperText={
-          (touched.name && errors.name)}
-      />
-
-
-      <button
-        onClick={nextStep}
-        disabled={
-          !Object.keys(touched).length ||
-          fields.map(field => Object.keys(errors).includes(field)).some(field => field)
-        }>
-        Avanti
-      </button>
-    </Form>
-  )
-}
-
-const ExampleForm = ({ history, location }) => {
-
-  const container = useRef(null)
+const ExampleForm = ({ history }) => {
 
   return (
     <>
@@ -78,20 +46,33 @@ const ExampleForm = ({ history, location }) => {
       <Formik
         initialValues={{
           name: undefined,
+          surname: undefined,
+          email: '',
+          phoneNumber: undefined,
+          taxCode: undefined,
+          birthDate: undefined
         }}
         // onSubmit={(values, actions) => {
         //   actions.setSubmitting(false)
         // }}
         validationSchema={Yup.object().shape({
-          name: Yup.string().required()
+          name: Yup.string().required(),
+          surname: Yup.string().required(),
+          email: Yup.string().email().required(),
+          phoneNumber: Yup.string(),
+          taxCode: Yup.string().length(16).matches(
+            /^[a-zA-Z]{6}[0-9]{2}[abcdehlmprstABCDEHLMPRST]{1}[0-9]{2}([a-zA-Z]{1}[0-9]{3})[a-zA-Z]{1}$/
+          ).required(),
+          birthDate: Yup.string()
         })}>
         {props => (
-          <StepWizard
-            onStepChange={() => {
-              container.current.scrollTo({ top: 0 })
-            }}>
-            <FirstStep {...props} />
-          </StepWizard>
+          <div id="example-form">
+            <StepWizard>
+              <FirstStep {...props} />
+              <SecondStep {...props} />
+              <ThirdStep {...props} />
+            </StepWizard>
+          </div>
         )}
       </Formik>
     </>
