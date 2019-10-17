@@ -1,6 +1,5 @@
 import React from 'react'
 import { Switch, Route, Redirect, Link } from 'react-router-dom'
-import Tools from '../../assets/emoji/tools.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
@@ -8,7 +7,6 @@ const Shallow = ({ history }) => (
   <>
     <h1>
       Shallow Rendering
-      <img src={Tools} alt="Tools" />
     </h1>
 
     <button
@@ -69,7 +67,7 @@ const Shallow = ({ history }) => (
 const Mount = ({ history }) => (
   <>
     <h1>
-      Full Rendering <img src={Tools} alt="Tools" />
+      Full Rendering
     </h1>
 
     <button
@@ -134,7 +132,7 @@ const Mount = ({ history }) => (
 const Render = ({ history }) => (
   <>
     <h1>
-      Static Rendering <img src={Tools} alt="Tools" />
+      Static Rendering
     </h1>
 
     <button
@@ -148,7 +146,7 @@ const Render = ({ history }) => (
     </button>
 
     <Link
-      to="what-you-will-learn"
+      to="/what-you-will-learn"
       style={{
         position: 'absolute',
         right: 0,

@@ -1,0 +1,12 @@
+{
+  "plugins": ["react", "import", "jest", "jsx-a11y", "prettier", "cypress"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jest/recommended",
+    "plugin:cypress/recommended"
+  ],
+  "env": {
+    "cypress/globals": true
+  }
+}
