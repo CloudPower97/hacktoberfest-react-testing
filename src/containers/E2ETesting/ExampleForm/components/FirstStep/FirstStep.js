@@ -16,6 +16,7 @@ const FirstStep = ({ values, touched, errors, handleBlur, handleChange, nextStep
           value={values.name}
           onChange={handleChange}
           onBlur={handleBlur}
+          autoComplete="off"
         />
         {
           touched.name && errors.name && <p className="field-error">{errors.name}</p>

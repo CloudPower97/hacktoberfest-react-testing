@@ -13,6 +13,8 @@ import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
 
+import MenWorking from '../../../assets/emoji/man-worker.png'
+
 import { FirstStep, SecondStep, ThirdStep } from './components'
 
 const ExampleForm = ({ history }) => {
@@ -20,7 +22,7 @@ const ExampleForm = ({ history }) => {
   return (
     <>
       <h1>
-        Example Form
+        Let&apos;s run an E2E test on this form! <img src={MenWorking} alt="Men Working" />
       </h1>
 
       <button

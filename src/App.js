@@ -4,178 +4,14 @@ import { Switch, Route, Redirect, Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import Tools from './assets/emoji/tools.png'
-import Nerd from './assets/emoji/nerd.png'
 import Books from './assets/emoji/books.png'
 import Jest from './assets/img/jest.png'
 import AirBnb from './assets/img/airbnb.png'
-import Input from './components/Input'
-import Button from './components/Button'
-
-const InputComponent = ({ history }) => (
-  <>
-    <h1
-      style={{
-        fontFamily: "'Inconsolata', monospace",
-      }}>
-      Let's test this input! <img src={Nerd} alt="Nerd" />
-    </h1>
-
-    <button
-      onClick={history.goBack}
-      style={{
-        position: 'absolute',
-        left: 0,
-        top: 0,
-      }}>
-      <FontAwesomeIcon icon={faArrowLeft} /> Go Back
-    </button>
-
-    <Link
-      to="recap"
-      style={{
-        position: 'absolute',
-        right: 0,
-        top: 0,
-      }}>
-      Next! <FontAwesomeIcon icon={faArrowRight} />
-    </Link>
-
-    <div
-      style={{
-        padding: 25,
-      }}>
-      <p>
-        It seems that there are a couple of test failing for this component... Let's get our hands
-        dirty fixing this component right now!
-      </p>
-    </div>
-
-    <form>
-      <label
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-        }}>
-        Phone Number:
-        <Input value="0811234567" type="text" />
-      </label>
-    </form>
-  </>
-)
-
-const ButtonComponent = ({ history }) => (
-  <>
-    <h1
-      style={{
-        fontFamily: "'Inconsolata', monospace",
-      }}>
-      Let's test this button! <img src={Nerd} alt="Nerd" />
-    </h1>
-
-    <button
-      onClick={history.goBack}
-      style={{
-        position: 'absolute',
-        left: 0,
-        top: 0,
-      }}>
-      <FontAwesomeIcon icon={faArrowLeft} /> Go Back
-    </button>
-
-    <Link
-      to="input-component"
-      style={{
-        position: 'absolute',
-        right: 0,
-        top: 0,
-      }}>
-      Next! <FontAwesomeIcon icon={faArrowRight} />
-    </Link>
-
-    <div
-      style={{
-        padding: 25,
-      }}>
-      <p>
-        It seems that there are a couple of test failing for this component... Let's get our hands
-        dirty fixing this component right now!
-      </p>
-    </div>
-
-    <div className="btn-wrapper">
-      <Button
-        onClick={() => alert("Yay! It's working")}
-        className="big"
-        style={{
-          columnSpan: 'all',
-          gridColumnEnd: 3,
-          gridColumnStart: 1,
-        }}>
-        Unit Test are important!
-      </Button>
-    </div>
-  </>
-)
-
-const WhatYouWillLearn = ({ history }) => (
-  <>
-    <h1
-      style={{
-        fontFamily: "'Inconsolata', monospace",
-      }}>
-      What you will learn <img src={Nerd} alt="Nerd" />
-    </h1>
-    <button
-      onClick={history.goBack}
-      style={{
-        position: 'absolute',
-        left: 0,
-        top: 0,
-      }}>
-      <FontAwesomeIcon icon={faArrowLeft} /> Go Back
-    </button>
-    <Link
-      to="button-component"
-      style={{
-        position: 'absolute',
-        right: 0,
-        top: 0,
-      }}>
-      Next! <FontAwesomeIcon icon={faArrowRight} />
-    </Link>
-
-    <div
-      style={{
-        padding: 25,
-        overflowY: 'auto',
-        height: '55%',
-      }}>
-      <p>
-        After this workshop you will have a good knowledge of Unit Testing concepts and how to start
-        using them effectively.
-      </p>
-    </div>
-
-    <div className="btn-wrapper">
-      <Link
-        to="/boring-class-component"
-        style={{
-          columnSpan: 'all',
-          gridColumnEnd: 3,
-          gridColumnStart: 1,
-        }}>
-        Without any further do, let's start coding together!
-      </Link>
-    </div>
-  </>
-)
 
 const UsedTools = ({ history }) => (
   <>
     <h1
-      style={{
-        fontFamily: "'Inconsolata', monospace",
-      }}>
+    >
       Used Tools <img src={Tools} alt="Tools" />
     </h1>
 
@@ -190,7 +26,7 @@ const UsedTools = ({ history }) => (
     </button>
 
     <Link
-      to="/enzyme-in-depth/shallow"
+      to="/enzyme-in-depth"
       style={{
         position: 'absolute',
         right: 0,
@@ -241,10 +77,7 @@ const UsedTools = ({ history }) => (
 
 const TestingTerminology = ({ history }) => (
   <>
-    <h1
-      style={{
-        fontFamily: "'Inconsolata', monospace",
-      }}>
+    <h1>
       Testing Terminology <img src={Books} alt="Books" />
     </h1>
 
@@ -335,7 +168,6 @@ const App = ({ match: { path } }) => (
 
     <h1
       style={{
-        fontFamily: "'Inconsolata', monospace",
         fontSize: '1.5em',
       }}>
       Test your code, not your patience Part I: Unit Testing with Jest and Enzyme
@@ -360,9 +192,6 @@ export default ({ match: { path } }) => (
     <Route exact path={path} component={App} />
     <Route exact path={`${path}/testing-terminology`} component={TestingTerminology} />
     <Route exact path={`${path}/used-tools`} component={UsedTools} />
-    <Route exact path={`${path}/what-you-will-learn`} component={WhatYouWillLearn} />
-    <Route exact path={`${path}/button-component`} component={ButtonComponent} />
-    <Route exact path={`${path}/input-component`} component={InputComponent} />
     <Redirect to={path} />
   </Switch>
 )
