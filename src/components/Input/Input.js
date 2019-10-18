@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 // import { useEffectOnce } from 'react-use'
 import cx from 'classnames'
-import Cleave from 'cleave.js'
+// import Cleave from 'cleave.js'
 import './Input.scss'
 import PropTypes from 'prop-types'
 
