@@ -6,7 +6,7 @@ import { Field } from 'formik'
 import Cleave from 'cleave.js/react';
 import 'cleave.js/dist/addons/cleave-phone.it'
 
-const ThirdStep = ({ values, touched, errors, handleBlur, handleChange, nextStep, previousStep }) => {
+const ThirdStep = ({ values, touched, errors, handleBlur, handleChange, previousStep, handleSubmit }) => {
   const fields = ['taxCode']
 
   return (
@@ -53,17 +53,17 @@ const ThirdStep = ({ values, touched, errors, handleBlur, handleChange, nextStep
         className="prev-btn"
         onClick={previousStep}
       >
-        Indietro
+        Back
       </button>
 
       <button
-        className="next-btn"
-        onClick={nextStep}
+        id="submit"
+        onClick={handleSubmit}
         disabled={
           !Object.keys(touched).length ||
           fields.map(field => Object.keys(errors).includes(field)).some(field => field)
         }>
-        Avanti
+        Submit
       </button>
     </div>
   )
@@ -76,7 +76,8 @@ ThirdStep.propTypes = {
   handleBlur: PropTypes.func.isRequired,
   handleChange: PropTypes.func.isRequired,
   nextStep: PropTypes.func,
-  previousStep: PropTypes.func
+  previousStep: PropTypes.func,
+  handleSubmit: PropTypes.func
 }
 
 export default ThirdStep

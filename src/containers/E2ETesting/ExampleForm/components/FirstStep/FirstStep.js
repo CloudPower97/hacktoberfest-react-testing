@@ -10,7 +10,7 @@ const FirstStep = ({ values, touched, errors, handleBlur, handleChange, nextStep
     <div id="first-step" className="input-wrapper">
       <div>
         <Field
-          placeholder="Nome"
+          placeholder="Name"
           id="name"
           type="text"
           value={values.name}
@@ -25,7 +25,7 @@ const FirstStep = ({ values, touched, errors, handleBlur, handleChange, nextStep
 
       <div>
         <Field
-          placeholder="Cognome"
+          placeholder="Surname"
           id="surname"
           type="text"
           value={values.surname}
@@ -47,7 +47,7 @@ const FirstStep = ({ values, touched, errors, handleBlur, handleChange, nextStep
         style={{
           gridColumnStart: 2
         }}>
-        Avanti
+        Next
       </button>
     </div>
   )

@@ -1,0 +1,35 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Linus",
+      "surname": "Torvalds",
+      "birthDate": "18/12/1969",
+      "email": "torvalds@osdl.org"
+    },
+    {
+      "name": "Claudio",
+      "surname": "Cortese",
+      "email": "claudio.cortese@abstract-technology.com",
+      "phoneNumber": "",
+      "taxCode": "CRTCLD97A18F839M",
+      "id": 2
+    },
+    {
+      "name": "Claudio",
+      "surname": "Cortese",
+      "email": "claudio.cortese@abstract-technology.com",
+      "phoneNumber": "",
+      "taxCode": "CRTCLD97A18F839M",
+      "id": 3
+    },
+    {
+      "name": "Claudio",
+      "surname": "Cortese",
+      "email": "claudio.cortese@abstract-technology.com",
+      "phoneNumber": "",
+      "taxCode": "CRTCLD97A18F839M",
+      "id": 4
+    }
+  ]
+}

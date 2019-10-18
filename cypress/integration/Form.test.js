@@ -1,6 +1,6 @@
 describe('Form', () => {
   it('should validate all required fields', function () {
-    cy.visit('example-form')
+    cy.visit('/e2e-testing/example-form')
       .get('#first-step .next-btn').should('be.disabled')
       .get('#name').type('Claudio').blur()
       .get('#first-step .next-btn').should('be.disabled')
@@ -18,5 +18,6 @@ describe('Form', () => {
       .get('#second-step .next-btn').should('not.be.disabled').click()
       .get('#taxCode').type('CRTCLD9718F39').blur()
       .get('#taxCode').clear().type('CRTCLD97A18F839M').blur()
+      .get('#submit').click()
   })
 })

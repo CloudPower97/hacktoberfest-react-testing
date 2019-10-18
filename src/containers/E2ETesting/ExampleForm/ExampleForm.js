@@ -1,4 +1,5 @@
 import React from 'react'
+import useAxios from 'axios-hooks'
 import PropTypes from 'prop-types'
 
 import "./ExampleForm.scss"
@@ -18,6 +19,12 @@ import MenWorking from '../../../assets/emoji/man-worker.png'
 import { FirstStep, SecondStep, ThirdStep } from './components'
 
 const ExampleForm = ({ history }) => {
+  const [, createNewUser] = useAxios({
+    url: 'http://localhost:3001/users',
+    method: 'POST',
+  }, {
+    manual: true,
+  })
 
   return (
     <>
@@ -49,14 +56,17 @@ const ExampleForm = ({ history }) => {
         initialValues={{
           name: undefined,
           surname: undefined,
-          email: '',
+          email: undefined,
           phoneNumber: undefined,
           taxCode: undefined,
           birthDate: undefined
         }}
-        // onSubmit={(values, actions) => {
-        //   actions.setSubmitting(false)
-        // }}
+        onSubmit={(values, actions) => {
+          createNewUser({
+            data: values
+          })
+          actions.setSubmitting(false)
+        }}
         validationSchema={Yup.object().shape({
           name: Yup.string().required(),
           surname: Yup.string().required(),

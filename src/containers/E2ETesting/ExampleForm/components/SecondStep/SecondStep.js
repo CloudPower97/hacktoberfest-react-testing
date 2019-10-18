@@ -8,7 +8,7 @@ import 'cleave.js/dist/addons/cleave-phone.it'
 
 const SecondStep = ({ values, touched, errors, handleBlur, handleChange, nextStep, previousStep }) => {
   // * Make the test fails by not adding 'email' in the fields array
-  const fields = []
+  const fields = ['email']
 
   return (
     <div id="second-step" className="input-wrapper">
@@ -49,7 +49,7 @@ const SecondStep = ({ values, touched, errors, handleBlur, handleChange, nextSte
         className="prev-btn"
         onClick={previousStep}
       >
-        Indietro
+        Back
       </button>
 
       <button
@@ -59,7 +59,7 @@ const SecondStep = ({ values, touched, errors, handleBlur, handleChange, nextSte
           !Object.keys(touched).length ||
           fields.map(field => Object.keys(errors).includes(field)).some(field => field)
         }>
-        Avanti
+        Next
       </button>
     </div>
   )
