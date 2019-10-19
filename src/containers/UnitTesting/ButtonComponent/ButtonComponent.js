@@ -54,7 +54,8 @@ const ButtonComponent = ({ history }) => (
           columnSpan: 'all',
           gridColumnEnd: 3,
           gridColumnStart: 1,
-        }}>
+        }}
+        icon={<FontAwesomeIcon icon={faArrowRight} />}>
         Unit Test are important!
       </Button>
     </div>
