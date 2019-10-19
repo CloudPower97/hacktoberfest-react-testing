@@ -8,7 +8,7 @@ import 'cleave.js/dist/addons/cleave-phone.it'
 
 const SecondStep = ({ values, touched, errors, handleBlur, handleChange, nextStep, previousStep }) => {
   // * Make the test fails by not adding 'email' in the fields array
-  const fields = ['email']
+  const fields = []
 
   return (
     <div id="second-step" className="input-wrapper">
